@@ -12,4 +12,12 @@ router.get("/", (req, res) => {
     res.send("Home Page says hello");
 });
 
+// Create a new confession
+router.post("/", (req,res) => {
+    let db_connect = dbo.getDb();
+    let newConfession = {
+        
+    }
+})
+
 module.exports = router;

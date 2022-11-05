@@ -25,7 +25,7 @@ const App = () => {
       body: JSON.stringify(input),
     })
     .catch(err => {
-      console.err(err);
+      console.error(err);
       return;
     });
     clearForm();
