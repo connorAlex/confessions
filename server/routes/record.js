@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
@@ -6,18 +7,28 @@ const ObjectId = require("mongodb").ObjectId;
 // https://expressjs.com/en/guide/routing.html
 const router = express.Router();
 
-
 // Home page route.
 router.get("/", (req, res) => {
     res.send("Home Page says hello");
 });
 
 // Create a new confession
-router.post("/", (req,res) => {
-    let db_connect = dbo.getDb();
-    let newConfession = {
-        
+router.post("/", async (req,res) => {
+    const db_connection = await dbo.run();
+    const db = db_connection.db("test_db");
+    console.log(db);
+    const newConfession  = {
+        "userName": "test",
+        "confession": "test",
+        "time": "test"
     }
+    try {
+        const postResult = await db.collection("test_collection").insertOne(newConfession);
+        console.log( await postResult);
+    } catch (err) {
+        console.error(err.stack);
+    }
+    
 })
 
 module.exports = router;
