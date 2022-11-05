@@ -17,12 +17,18 @@ const App = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    let post = {
+      userName: "",
+      confession: input,
+      time: "test time"
+    }
+
     await fetch("http://localhost:5000/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(input),
+      body: JSON.stringify(post),
     })
     .catch(err => {
       console.error(err);

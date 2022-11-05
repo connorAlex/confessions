@@ -16,11 +16,10 @@ router.get("/", (req, res) => {
 router.post("/", async (req,res) => {
     const db_connection = await dbo.run();
     const db = db_connection.db("test_db");
-    console.log(db);
     const newConfession  = {
-        "userName": "test",
-        "confession": "test",
-        "time": "test"
+        "userName": req.body.userName,
+        "confession": req.body.confession,
+        "time": req.body.time
     }
     try {
         const postResult = await db.collection("test_collection").insertOne(newConfession);
@@ -28,7 +27,7 @@ router.post("/", async (req,res) => {
     } catch (err) {
         console.error(err.stack);
     }
-    res.send("record added");
+    res.json("record added");
 })
 
 module.exports = router;
