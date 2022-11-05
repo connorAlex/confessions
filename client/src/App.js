@@ -6,8 +6,7 @@ const App = () => {
 
   const [input, setInput] = useState('');
 
-  const clearForm = (e) => {
-    e.preventDefault();
+  const clearForm = () => {
     setInput('');
   }
   
@@ -15,12 +14,29 @@ const App = () => {
     setInput(e.target.value);
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    await fetch("http://localhost:5000/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(input),
+    })
+    .catch(err => {
+      console.err(err);
+      return;
+    });
+    clearForm();
+  }
+
   return (
     <div className='App'>
       <label htmlFor='confession'>confess</label>
       <form name='confession' className='confession'>
         <textarea value={input} onChange={handleInput}></textarea>
-        <Button onClick={clearForm} label='Submit'/>
+        <Button onClick={onSubmit} label='Submit'/>
       </form>
 
     </div>
