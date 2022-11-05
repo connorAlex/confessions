@@ -28,7 +28,7 @@ router.post("/", async (req,res) => {
     } catch (err) {
         console.error(err.stack);
     }
-    
+    res.send("record added");
 })
 
 module.exports = router;
