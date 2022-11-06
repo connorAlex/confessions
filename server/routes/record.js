@@ -8,7 +8,7 @@ const ObjectId = require("mongodb").ObjectId;
 const router = express.Router();
 
 // get a random confession.
-router.get("/", async (req, res) => {
+router.get("/view", async (req, res) => {
     const db_connection = await dbo.run();
     const db = db_connection.db("test_db");
 
