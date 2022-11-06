@@ -8,7 +8,7 @@ module.exports = {
     run: async () => {
         try {
             db_connect = await client.connect();
-            console.log("Connected Correctly to server");
+            console.log("Connected Correctly to DB");
             return db_connect;
         } catch (err) {
             console.log(err.stack);
@@ -16,6 +16,7 @@ module.exports = {
     },
     close: async () => {
         await client.close();
+        console.log("Close DB Connection")
     },
     getDb: async () => {return await client.db("test_db")}
 };

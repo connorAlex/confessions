@@ -14,12 +14,12 @@ router.get("/view", async (req, res) => {
 
     try {
         let randomConfession = await db.collection("test_collection").aggregate([{ $sample: {size: 1} }]).toArray().then(data => data);
-        res.send(await randomConfession[0]["confession"]);
+        res.send(await randomConfession[0]);
     } catch (err) {
         console.error(err.stack);
     }
 
-    db_connection.close();
+    dbo.close();
 });
 
 // Create a new confession

@@ -1,8 +1,12 @@
 import React, {useEffect, useState} from "react";
 
-const View = () => {
+const View = React.memo(() => {
 
     const [confession, setConfession ] = useState();
+
+    useEffect(() => {
+        getConfession();
+    }, []);
 
     let getConfession = async () => {
         let response = await fetch("http://localhost:5000/view");
@@ -13,17 +17,17 @@ const View = () => {
             return;
         }
 
-        const confessionJson = response.json();
-        setConfession(confessionJson);
+        const confessionJson = await response.json();
+        setConfession( await confessionJson.confession);
     };
-    getConfession();
+            
 
     return (
         <div className="View">
-            This is the view page
+            <div>This is the view page</div>
             <div>{confession}</div>
         </div>
     );
-}
+});
 
 export default View;
