@@ -1,8 +1,7 @@
-import './App.css';
 import React, { useState } from 'react';
 import Button from './components/Button.js';
 
-const App = () => {
+const Home = () => {
 
   const [input, setInput] = useState('');
 
@@ -38,7 +37,7 @@ const App = () => {
   }
 
   return (
-    <div className='App'>
+    <div className='Home'>
       <label htmlFor='confession'>confess</label>
       <form name='confession' className='confession'>
         <textarea value={input} onChange={handleInput}></textarea>
@@ -49,4 +48,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;
