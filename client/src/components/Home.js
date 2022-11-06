@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from './components/Button.js';
+import Button from './Button'
 
 const Home = () => {
 
