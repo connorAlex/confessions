@@ -7,9 +7,19 @@ const ObjectId = require("mongodb").ObjectId;
 // https://expressjs.com/en/guide/routing.html
 const router = express.Router();
 
-// Home page route.
-router.get("/", (req, res) => {
-    res.send("Home Page says hello");
+// get a random confession.
+router.get("/", async (req, res) => {
+    const db_connection = await dbo.run();
+    const db = db_connection.db("test_db");
+
+    try {
+        let randomConfession = await db.collection("test_collection").aggregate([{ $sample: {size: 1} }]).toArray().then(data => data);
+        res.send(await randomConfession[0]["confession"]);
+    } catch (err) {
+        console.error(err.stack);
+    }
+
+    db_connection.close();
 });
 
 // Create a new confession
@@ -27,7 +37,8 @@ router.post("/", async (req,res) => {
     } catch (err) {
         console.error(err.stack);
     }
+    db_connection.close();
     res.json("record added");
-})
+});
 
 module.exports = router;
