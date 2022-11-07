@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useLocation} from "react-router-dom";
 import Navbar from "./Navbar";
+import './styles/View.css'
 
 const View = React.memo(() => {
 

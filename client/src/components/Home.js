@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/Home.css'
 import {useNavigate} from 'react-router-dom';
 import Button from './Button'
 import Navbar from './Navbar';
@@ -44,11 +45,14 @@ const Home = () => {
   return (
     <div className='Home'>
      
-        <label htmlFor='confession'>confess</label>
+        <div className='title'>confess</div>
+
         <form name='confession' className='confession'>
-        <input type="text" value={input} onChange={handleInput}></input>
+        <textarea type="text" value={input} onChange={handleInput}></textarea>
+        <div className="count">{input.length}/140</div>
         <Button onClick={onSubmit} label='Submit'/>
         </form>
+
      
 
     </div>

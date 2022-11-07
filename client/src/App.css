@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: lightgray;
 }
 
 .App {
@@ -10,12 +10,4 @@ body {
   align-items: center;
   justify-content: center;
 }
-.confession {
-  display: flex;
-  flex-direction: column;
 
-  align-content: center;
-  justify-content: center;
-  
-  width: 30vw;
-}
