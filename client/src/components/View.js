@@ -7,12 +7,9 @@ const View = React.memo(() => {
     const [confession, setConfession ] = useState();
     const navigate = useNavigate();
     const {state} = useLocation();
-    const {verified} = state;
 
     useEffect(() => {
-        if (verified !== true) {
-            console.log("did not pass check");
-            console.log(verified);
+        if (!state) {
             navigate("/");
         };
         getConfession();

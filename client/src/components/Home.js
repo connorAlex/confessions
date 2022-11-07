@@ -38,19 +38,18 @@ const Home = () => {
     });
     
     clearForm();
-    navigate("/view", {state: {verified: true}});
+    navigate("/view", {state: {}});
   }
 
   return (
     <div className='Home'>
-        <Navbar />
-      <div>
-          <label htmlFor='confession'>confess</label>
-          <form name='confession' className='confession'>
-            <input type="text" value={input} onChange={handleInput}></input>
-            <Button onClick={onSubmit} label='Submit'/>
-          </form>
-      </div>
+     
+        <label htmlFor='confession'>confess</label>
+        <form name='confession' className='confession'>
+        <input type="text" value={input} onChange={handleInput}></input>
+        <Button onClick={onSubmit} label='Submit'/>
+        </form>
+     
 
     </div>
   );
