@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import Button from './Button'
 
 const Home = () => {
 
   const [input, setInput] = useState('');
+  const navigate = useNavigate();
 
   const clearForm = () => {
     setInput('');
@@ -33,7 +35,9 @@ const Home = () => {
       console.error(err);
       return;
     });
+    
     clearForm();
+    navigate("/view");
   }
 
   return (
