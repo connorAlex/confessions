@@ -24,8 +24,8 @@ const View = React.memo(() => {
 
     return (
         <div className="View">
-            <div>This is the view page</div>
             <div>{confession}</div>
+            <div>-Anon</div>
         </div>
     );
 });
