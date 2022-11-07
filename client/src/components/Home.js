@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import Button from './Button'
+import Navbar from './Navbar';
 
 const Home = () => {
 
@@ -37,16 +38,19 @@ const Home = () => {
     });
     
     clearForm();
-    navigate("/view");
+    navigate("/view", {state: {verified: true}});
   }
 
   return (
     <div className='Home'>
-      <label htmlFor='confession'>confess</label>
-      <form name='confession' className='confession'>
-        <textarea value={input} onChange={handleInput}></textarea>
-        <Button onClick={onSubmit} label='Submit'/>
-      </form>
+        <Navbar />
+      <div>
+          <label htmlFor='confession'>confess</label>
+          <form name='confession' className='confession'>
+            <input type="text" value={input} onChange={handleInput}></input>
+            <Button onClick={onSubmit} label='Submit'/>
+          </form>
+      </div>
 
     </div>
   );

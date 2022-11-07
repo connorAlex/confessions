@@ -1,10 +1,20 @@
 import React, {useEffect, useState} from "react";
+import {useNavigate, useLocation} from "react-router-dom";
+import Navbar from "./Navbar";
 
 const View = React.memo(() => {
 
     const [confession, setConfession ] = useState();
+    const navigate = useNavigate();
+    const {state} = useLocation();
+    const {verified} = state;
 
     useEffect(() => {
+        if (verified !== true) {
+            console.log("did not pass check");
+            console.log(verified);
+            navigate("/");
+        };
         getConfession();
     }, []);
 
@@ -24,8 +34,11 @@ const View = React.memo(() => {
 
     return (
         <div className="View">
-            <div>{confession}</div>
-            <div>-Anon</div>
+            <Navbar />
+            <div>
+                <div>{confession}</div>
+                <div>-Anon</div>
+            </div>
         </div>
     );
 });
