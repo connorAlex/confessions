@@ -29,7 +29,10 @@ router.post("/", async (req,res) => {
     const db = db_connection.db("test_db");
 
     // https://github.com/2Toad/Profanity Profanity Check - Thanks 2Toad!
-    if (profanity.exists(req.body.confession)) return;
+    if (profanity.exists(req.body.confession)) {
+        db_connection.close();
+        return;
+    };
 
     const newConfession  = {
         "userName": req.body.userName,
