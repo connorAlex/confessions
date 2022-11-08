@@ -1,5 +1,6 @@
 body {
-  background-color: lightgray;
+  background-color: #fdfdfd;
+  font-size: calc(80% + 1.2vw);
 }
 
 .App {

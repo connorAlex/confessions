@@ -19,39 +19,47 @@ const Home = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    if (!input) return;
     let post = {
       userName: "",
       confession: input,
       time: "test time"
     }
 
-    await fetch("http://localhost:5000/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(post),
-    })
-    .catch(err => {
-      console.error(err);
-      return;
-    });
+    if (input.length > 50 && input.length < 140) {
+        await fetch("http://localhost:5000/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(post),
+        })
+        .catch(err => {
+          console.error(err);
+          return;
+        });
+        
+        clearForm();
+        navigate("/view", {state: {}});
+    } else {
+      alert("stay within the text limits.")
+    }
+
+  } 
     
-    clearForm();
-    navigate("/view", {state: {}});
-  }
 
   return (
     <div className='Home'>
      
-        <div className='title'>confess</div>
-
+        <div className='title'>confess.</div>
+        <div className='confessionHelp'>Do I do needless work on sunday?</div>
         <form name='confession' className='confession'>
         <textarea type="text" value={input} onChange={handleInput}></textarea>
         <div className="count">{input.length}/140</div>
-        <Button onClick={onSubmit} label='Submit'/>
+        
         </form>
+        <Button onClick={onSubmit} label='Submit'/>
+      
 
      
 
