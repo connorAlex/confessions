@@ -9,13 +9,12 @@
 
 }
 
-
 .title {
     text-align: center;
-    padding: 5px;
     font-weight: 500;
     align-self: center;
 }
+
 .confessionHelp {
     text-align: center;
     align-self: center;
@@ -23,7 +22,6 @@
 
     font-style: italic;
     font-size: calc(80% + .2vw);;
-    
 }
 .confession {
     display: flex;
@@ -45,6 +43,7 @@ textarea {
     height: 100%;   
 
     text-align:left;
+    padding: 5px;
     font-size: calc(80% + 1vw);
     font-family:Courier, monospace;
 
