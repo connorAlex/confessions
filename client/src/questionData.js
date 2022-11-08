@@ -17,7 +17,7 @@ const questionData = [
     'Do I judge others?',
     'Am I unsupportive?',
     'Do I apologize?',
-    'Am I inconsistent?'
+    'Am I hesitant to love?'
 ];
 
-export {questionData};
+export default questionData;

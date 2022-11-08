@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './styles/Home.css'
 import {useNavigate} from 'react-router-dom';
 import Button from './Button'
-import Navbar from './Navbar';
+import questionData from '../questionData';
 
 const Home = () => {
 
   const [input, setInput] = useState('');
+  const index = Math.floor(Math.random() * questionData.length);
+  const [question, setQuestion] = useState(questionData[index]);
   const navigate = useNavigate();
+  
+  const shuffleQuestion = useCallback(() => {
+    const index = Math.floor(Math.random() * questionData.length);
+    setQuestion(questionData[index]);
+
+  }, []);
+
+  useEffect(() => {
+    const intervalID = setInterval(shuffleQuestion, 20000);
+    return () => clearInterval(intervalID);
+  }, [shuffleQuestion]);
 
   const clearForm = () => {
     setInput('');
@@ -20,6 +33,7 @@ const Home = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!input) return;
+    
     let post = {
       userName: "",
       confession: input,
@@ -52,7 +66,7 @@ const Home = () => {
     <div className='Home'>
      
         <div className='title'>confess.</div>
-        <div className='confessionHelp'>Do I do needless work on sunday?</div>
+        <div className='confessionHelp'>{question}</div>
         <form name='confession' className='confession'>
         <textarea type="text" value={input} onChange={handleInput}></textarea>
         <div className="count">{input.length}/140</div>
