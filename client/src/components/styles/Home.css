@@ -56,3 +56,8 @@ textarea {
     color: gainsboro;
     padding: 3px;
 }
+
+.approved {
+    color: black;
+    font-weight: 500;
+}

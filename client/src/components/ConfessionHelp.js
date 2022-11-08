@@ -30,7 +30,7 @@ const ConfessionHelp = () => {
             }
              
 
-        }, 20000);
+        }, 8000);
         return () => clearInterval(timeout);
     }, [isFading])
 
