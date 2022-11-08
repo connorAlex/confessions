@@ -1,4 +1,5 @@
 const { response } = require("express");
+import profanity from "@2toad/profanity";
 const express = require("express");
 const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
@@ -26,6 +27,10 @@ router.get("/view", async (req, res) => {
 router.post("/", async (req,res) => {
     const db_connection = await dbo.run();
     const db = db_connection.db("test_db");
+
+    // https://github.com/2Toad/Profanity Profanity Check - Thanks 2Toad!
+    if (profanity.exists(req.body.confession)) return;
+
     const newConfession  = {
         "userName": req.body.userName,
         "confession": req.body.confession,
