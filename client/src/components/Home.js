@@ -33,8 +33,7 @@ const Home = () => {
       time: "test time"
     }
 
-    if (input.length > 50 && input.length < 140) {
-      approved = true;
+    if (approved) {
 
       await fetch("http://localhost:5000/", {
         method: "POST",
