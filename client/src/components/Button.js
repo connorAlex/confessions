@@ -1,7 +1,7 @@
 import React from "react";
 import './styles/Button.css';
 
-const Button = ({label, onClick}) => {
+const Button = ({label, onClick, approved}) => {
 
     const fakeOnclick = (e) => {
         e.preventDefault();
@@ -9,7 +9,7 @@ const Button = ({label, onClick}) => {
     }
 
     return (
-        <div className="button" onClick={onClick}>
+        <div className={`button ${approved? '':'inactive'}`} onClick={onClick}>
             {label}
         </div>
     );

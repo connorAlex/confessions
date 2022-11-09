@@ -10,10 +10,16 @@
     min-width: fit-content;
     width: 15%;
     text-align: center;
+    transition: .8s ease;
 }
 
 .button:hover {
     background-color: white;
     border: 1px solid black;
     color: black;
+}
+
+.inactive {
+    opacity: 0;
+    transition: .8s ease;
 }

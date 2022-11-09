@@ -18,7 +18,7 @@ const Home = () => {
     setInput(e.target.value);
   }
 
-  if (input.length > 50 && input.length < 140) {
+  if (input.length >= 50 && input.length <= 140) {
     approved = true;
   }
 
@@ -67,7 +67,7 @@ const Home = () => {
         <div className={`count ${approved ? 'approved':'fake'}`}>{input.length}/140</div>
         
         </form>
-        <Button onClick={onSubmit} label='Submit'/>
+        <Button approved={approved} onClick={onSubmit} label='Submit'/>
       
 
      
