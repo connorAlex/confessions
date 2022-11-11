@@ -1,8 +1,9 @@
 const { response } = require("express");
-import profanity from "@2toad/profanity";
 const express = require("express");
 const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
+const profanity = require('@2toad/profanity').profanity;
+
 
 //router is an instance of the express router. Will be used to define routes.
 // https://expressjs.com/en/guide/routing.html
