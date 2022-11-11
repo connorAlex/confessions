@@ -1,0 +1,7 @@
+.Navbar {
+    font-weight: 500;
+    cursor:pointer;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}

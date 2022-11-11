@@ -32,11 +32,12 @@ const View = React.memo(() => {
 
     return (
         <div className="View">
-            <Navbar />
+            
             <div>
                 <div>{confession}</div>
                 <div>-Anon</div>
             </div>
+            <Navbar />
         </div>
     );
 });

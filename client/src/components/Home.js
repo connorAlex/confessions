@@ -25,7 +25,8 @@ const Home = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     
-    if (!input) return;
+    // put back after styling done
+    //if (!input) return;
 
     let post = {
       userName: "",
@@ -51,6 +52,9 @@ const Home = () => {
       navigate("/view", {state: {}});
     } else {
       approved = false;
+      
+      // remove after /view styling complete
+      navigate("/view", {state: {}});
     }
 
   } 
