@@ -4,32 +4,45 @@
     justify-content: center;
     align-items: center;
     
-    gap: 10px;
+    gap: 20px;
 
-    height: 70%;
-    width: 80%;
+    height: 100%;
+    width: 90%;
     
 }
 .message {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    min-height: fit-content;
-    height: 50%;
-    min-width: 250px;
-    max-width: 80%;
+    align-content: flex-end;
+    border: 1px solid black;
+
+    padding: 5px;
+    gap: 5px;
+    
+    min-width: 150px;
+    max-width: 50%;
+    
+    height: 30%;
 }
-.message > :first-child {
-    align-self: flex-start;
-    padding-bottom: 5px;
-}
-.message :nth-child(2) {
-    width: 80%;
+.confessionText {
+    display: block;
+    width: 100%;
     font-style: italic;
 }
-.message :nth-child(3) {
+
+.signature {
+    display: block;
+    width: 50px;
     align-self: flex-end;
-    padding-right: 5px;
+    white-space: nowrap;
+
+    
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
