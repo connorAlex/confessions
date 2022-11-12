@@ -32,8 +32,8 @@ const View = React.memo(() => {
 
     return (
         <div className="View">
-            
-            <div>
+            <div className = "message">
+                <div>Another's confession.</div>
                 <div>{confession}</div>
                 <div>-Anon</div>
             </div>
