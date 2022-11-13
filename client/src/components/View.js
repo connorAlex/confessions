@@ -8,7 +8,6 @@ import './styles/View.css'
 const View = React.memo(() => {
 
     const [confession, setConfession ] = useState();
-    const [isFading, setIsFading] = useState();
     const navigate = useNavigate();
     const {state} = useLocation();
 
@@ -17,17 +16,8 @@ const View = React.memo(() => {
             navigate("/");
         };
         getConfession();
-    }, []);
+    }, [navigate, state]);
 
-    // useEffect(() => {
-            
-    //     if (confession) {
-    //         setIsFading('fade-out');
-            
-    //     }
-    
-    //     return () => clearInterval(timeout);
-    // }, [isFading])
 
     let getConfession = async () => {
         let response = await fetch("http://localhost:5000/view");
