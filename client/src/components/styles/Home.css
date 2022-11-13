@@ -27,12 +27,10 @@
 .confession {
     display: flex;
     flex-direction: column;
-
-    align-self: center;
-    
     align-content: center;
     justify-content: center;
-
+    align-self: center;
+    
     max-width: 700px;
     height: 60%;
     width: 75%;
@@ -42,10 +40,13 @@
 }
 textarea {
     height: 100%;   
+    width: 80%;
+    align-self: center;
 
     text-align:left;
-    padding: 15px;
-    font-size: calc(80% + 1vw);
+    margin: 35px;
+    padding-top: 7%;
+    font-size: calc(95% + .8vh);
     font-family:Courier, monospace;
 
     border: none;

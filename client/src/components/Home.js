@@ -25,8 +25,7 @@ const Home = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     
-    // put back after styling done
-    //if (!input) return;
+    if (!input) return;
 
     let post = {
       userName: "",
@@ -49,13 +48,15 @@ const Home = () => {
       });
       
       clearForm();
-      navigate("/view", {state: {}});
+      navigate("/view", {state: {approved}});
     } else {
       approved = false;
       
       // remove after /view styling complete
-      navigate("/view", {state: {}});
+      // navigate("/view", {state: {}});
     }
+    approved = false;
+    localStorage.clear();
 
   } 
     

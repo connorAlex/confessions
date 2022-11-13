@@ -9,14 +9,20 @@ const View = React.memo(() => {
 
     const [confession, setConfession ] = useState();
     const navigate = useNavigate();
-    const {state} = useLocation();
+    let {state} = useLocation();
 
     useEffect(() => {
-        if (!state) {
+        if (!state.approved) {
             navigate("/");
         };
-        getConfession();
-    }, [navigate, state]);
+        console.log(state);
+        state = false;
+        if (localStorage.getItem("confession")) {
+            setConfession(localStorage.getItem("confession"));
+        } else {
+            getConfession();
+        };
+    }, []);
 
 
     let getConfession = async () => {
@@ -29,6 +35,7 @@ const View = React.memo(() => {
         }
 
         const confessionJson = await response.json();
+        localStorage.setItem("confession", confessionJson.confession);
         setConfession( await confessionJson.confession);
     };
             
