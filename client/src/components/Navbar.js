@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <div className='Navbar'>
-            <div onClick={goHome}>confess again?</div>
+            <div onClick={goHome}>will you confess again?</div>
         </div>
     );
 }

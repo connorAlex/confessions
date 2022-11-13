@@ -45,11 +45,13 @@ const View = React.memo(() => {
 
     return (
         <div className="View">
+            <div className="confessionTitle">Another's Thoughts.</div>
             <div className = "message">
-                <SkeletonTheme  baseColor="#f3f4f6" highlightColor="#d1d5db">
-                    <div>Another's confession.</div>
-                    <div className="confessionText">{!confession? (<Skeleton count={4}/>) : (<div style={{animation: `fadeIn 1s`}}> {confession}</div>) }</div>
-                    <div className="signature">{!confession? (<Skeleton className={`signature`} count={1}/>) : (<div style={{animation: `fadeIn 1s`}}>-Anon</div>) }</div>
+                
+                <SkeletonTheme  width='95%' baseColor="#f3f4f6" highlightColor="#d1d5db">
+                    
+                    <div className="confessionText">{!confession? (<Skeleton count={5}/>) : (<div style={{animation: `fadeIn 500ms`}}> {confession}</div>) }</div>
+                    <div className="signature">{!confession? (<Skeleton className={`signature`} count={1}/>) : (<div style={{animation: `fadeIn 500ms`}}>- Anon</div>) }</div>
                 </SkeletonTheme>
             </div>
             <Navbar />
