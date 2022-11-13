@@ -1,25 +1,25 @@
 .button {
-    align-self: center;
-    cursor: pointer;
-    border: 1px solid white;
-    background-color: #18181b;
-    color: white;
+  align-self: center;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: #18181b;
+  color: white;
 
-    padding: 5px;
-    margin: 10px;
-    min-width: fit-content;
-    width: 15%;
-    text-align: center;
-    transition: .8s ease;
+  padding: 5px;
+  margin: 10px;
+  min-width: fit-content;
+  width: 15%;
+  text-align: center;
+  transition: 0.8s ease;
 }
 
 .button:hover {
-    background-color: white;
-    border: 1px solid #18181b;
-    color: #18181b;
+  background-color: white;
+  border: 1px solid #18181b;
+  color: #18181b;
 }
 
 .inactive {
-    opacity: 0;
-    transition: .8s ease;
+  opacity: 0;
+  transition: 0.8s ease;
 }

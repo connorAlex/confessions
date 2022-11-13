@@ -1,56 +1,55 @@
 .View {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    height: 100%;
-    width: 90%;
-    
+  gap: 20px;
+
+  height: 100%;
+  width: 90%;
 }
 .confessionTitle {
-    font-weight: 500;
-    font-size:  35px;
+  font-weight: 500;
+  font-size: 35px;
 }
 .message {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
-    border: 1px solid #18181b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 
-    padding: 5px;
-    
-    min-width: 150px;
-    max-width: 400px;
-    width: 60%;
-    height: 30%;
+  border: 1px solid #18181b;
+
+  padding: 5px;
+
+  min-width: 150px;
+  max-width: 400px;
+  width: 60%;
+  height: 30%;
 }
 .confessionText {
-    align-self: center;
-    width: 70%;
+  align-self: center;
+  width: 70%;
 
-    font-style: italic;
-    text-align: center;
-    
+  font-style: italic;
+  text-align: center;
 }
 .skeletonText {
-    width: 100%;
-    align-self: center;
+  width: 100%;
+  align-self: center;
 }
-.signature {    
-    align-self: center;
-    white-space: nowrap;
-    padding-left: 35%;
-    width: 20%;
+.signature {
+  align-self: center;
+  white-space: nowrap;
+  padding-left: 35%;
+  width: 20%;
 }
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

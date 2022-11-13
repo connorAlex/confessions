@@ -1,65 +1,63 @@
 .Home {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    gap: 5px;
-
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 5px;
 }
 
 .title {
-    text-align: center;
-    font-weight: 400;
-    font-size: 35px;
-    align-self: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: 35px;
+  align-self: center;
 }
 
 .confessionHelp {
-    text-align: center;
-    align-self: center;
-    width: 75%;
+  text-align: center;
+  align-self: center;
+  width: 75%;
 
-    font-style: italic;
-    font-size: calc(80% + .2vw);;
+  font-style: italic;
+  font-size: calc(80% + 0.2vw);
 }
 .confession {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-self: center;
-    
-    max-width: 700px;
-    height: 60%;
-    width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
 
-    border: solid 1px #18181b;
-    
+  max-width: 700px;
+  height: 60%;
+  width: 75%;
+
+  border: solid 1px #18181b;
 }
 textarea {
-    height: 100%;   
-    width: 80%;
-    align-self: center;
+  height: 100%;
+  width: 80%;
+  align-self: center;
 
-    text-align:left;
-    margin: 35px;
-    padding-top: 7%;
-    font-size: calc(95% + .8vh);
-    font-family:Courier, monospace;
+  text-align: left;
+  margin: 35px;
+  padding-top: 7%;
+  font-size: calc(95% + 0.8vh);
+  font-family: Courier, monospace;
 
-    border: none;
-    resize: none;
-    outline-width: 0;
+  border: none;
+  resize: none;
+  outline-width: 0;
 }
 .count {
-    align-self: flex-end;
-    color: gainsboro;
-    padding: 5px;
+  align-self: flex-end;
+  color: gainsboro;
+  padding: 5px;
 }
 
 .approved {
-    color: #18181b;
-    font-weight: 500;
+  color: #18181b;
+  font-weight: 500;
 }

@@ -1,23 +1,23 @@
 .Navbar {
-    align-self: center;
-    cursor: pointer;
-    font-weight: 500;
-    border: 1px solid #18181b;
-    color: #18181b;
-    background-color: white;
+  align-self: center;
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid #18181b;
+  color: #18181b;
+  background-color: white;
 
-    padding: 5px;
-    margin: 10px;
-    min-width: fit-content;
-    width: 50%;
-    max-width: 400px;
+  padding: 5px;
+  margin: 10px;
+  min-width: fit-content;
+  width: 50%;
+  max-width: 400px;
 
-    text-align: center;
-    transition: .8s ease;
+  text-align: center;
+  transition: 0.8s ease;
 }
 
 .Navbar:hover {
-    background-color: #18181b;
-    border: 1px solid white;
-    color: white;
+  background-color: #18181b;
+  border: 1px solid white;
+  color: white;
 }
