@@ -11,7 +11,8 @@
 
 .title {
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 35px;
     align-self: center;
 }
 
@@ -36,14 +37,14 @@
     height: 60%;
     width: 75%;
 
-    border: solid 1px black;
+    border: solid 1px #18181b;
     
 }
 textarea {
     height: 100%;   
 
     text-align:left;
-    padding: 5px;
+    padding: 15px;
     font-size: calc(80% + 1vw);
     font-family:Courier, monospace;
 
@@ -54,10 +55,10 @@ textarea {
 .count {
     align-self: flex-end;
     color: gainsboro;
-    padding: 3px;
+    padding: 5px;
 }
 
 .approved {
-    color: black;
+    color: #18181b;
     font-weight: 500;
 }

@@ -2,7 +2,7 @@
     align-self: center;
     cursor: pointer;
     border: 1px solid white;
-    background-color: black;
+    background-color: #18181b;
     color: white;
 
     padding: 5px;
@@ -15,8 +15,8 @@
 
 .button:hover {
     background-color: white;
-    border: 1px solid black;
-    color: black;
+    border: 1px solid #18181b;
+    color: #18181b;
 }
 
 .inactive {
