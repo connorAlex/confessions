@@ -24,7 +24,7 @@ const View = React.memo(() => {
   }, []);
 
   let getConfession = async () => {
-    let response = await fetch("https://confessions-weld.vercel.app/view");
+    let response = await fetch("confessions-weld.vercel.app/view");
 
     if (!response.ok) {
       const message = `Error: ${response.statusText}`;
@@ -33,7 +33,7 @@ const View = React.memo(() => {
     }
 
     const confessionJson = await response.json();
-    localStorage.setItem("confession", confessionJson.confession);
+    localStorage.setItem("confession", await confessionJson.confession);
     setConfession(await confessionJson.confession);
   };
 
