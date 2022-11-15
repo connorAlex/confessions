@@ -24,7 +24,7 @@ const View = React.memo(() => {
   }, []);
 
   let getConfession = async () => {
-    let response = await fetch("http://localhost:5000/view");
+    let response = await fetch("https://confessions-weld.vercel.app/view");
 
     if (!response.ok) {
       const message = `Error: ${response.statusText}`;

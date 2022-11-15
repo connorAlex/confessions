@@ -33,7 +33,7 @@ const Home = () => {
     };
 
     if (approved) {
-      await fetch("http://localhost:5000/", {
+      await fetch("https://confessions-weld.vercel.app/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
