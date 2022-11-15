@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
     db_connection.close();
     return;
   }
-
+  
   const newConfession = {
     userName: req.body.userName,
     confession: req.body.confession,
@@ -52,7 +52,7 @@ router.post("/", async (req, res) => {
     console.error(err.stack);
   }
   db_connection.close();
-  res.json("record added");
+  res.text("record added");
 });
 
 module.exports = router;
