@@ -9,7 +9,7 @@ const profanity = require("@2toad/profanity").profanity;
 const router = express.Router();
 
 // get a random confession.
-router.get("/view", async (req, res) => {
+router.get("https://localhost:8080/view", async (req, res) => {
   const db_connection = await dbo.run();
   const db = db_connection.db("test_db");
 
@@ -19,7 +19,7 @@ router.get("/view", async (req, res) => {
       .aggregate([{ $sample: { size: 1 } }])
       .toArray()
       .then((data) => data);
-    res.send(await randomConfession[0]);
+    res.status(200).send(await randomConfession[0]);
   } catch (err) {
     console.error(err.stack);
   }
@@ -28,7 +28,7 @@ router.get("/view", async (req, res) => {
 });
 
 // Create a new confession
-router.post("/", async (req, res) => {
+router.post("https://localhost:8080/", async (req, res) => {
   const db_connection = await dbo.run();
   const db = db_connection.db("test_db");
 
