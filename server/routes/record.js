@@ -1,5 +1,6 @@
 const { response } = require("express");
 const express = require("express");
+const cors = require('cors');
 const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
 const profanity = require("@2toad/profanity").profanity;
@@ -7,9 +8,10 @@ const profanity = require("@2toad/profanity").profanity;
 //router is an instance of the express router. Will be used to define routes.
 // https://expressjs.com/en/guide/routing.html
 const router = express.Router();
+router.use(cors());
 
 // get a random confession.
-router.get("https://localhost:8080/view", async (req, res) => {
+router.get("/view", async (req, res) => {
   const db_connection = await dbo.run();
   const db = db_connection.db("test_db");
 
@@ -19,7 +21,8 @@ router.get("https://localhost:8080/view", async (req, res) => {
       .aggregate([{ $sample: { size: 1 } }])
       .toArray()
       .then((data) => data);
-    res.status(200).send(await randomConfession[0]);
+    //res.json({a:1});
+    res.status(200).json(await randomConfession[0]);
   } catch (err) {
     console.error(err.stack);
   }
@@ -28,7 +31,7 @@ router.get("https://localhost:8080/view", async (req, res) => {
 });
 
 // Create a new confession
-router.post("https://localhost:8080/", async (req, res) => {
+router.post("/", async (req, res) => {
   const db_connection = await dbo.run();
   const db = db_connection.db("test_db");
 
@@ -52,7 +55,7 @@ router.post("https://localhost:8080/", async (req, res) => {
     console.error(err.stack);
   }
   db_connection.close();
-  res.text("record added");
+  res.send("record added");
 });
 
 module.exports = router;

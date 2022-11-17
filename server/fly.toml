@@ -11,6 +11,8 @@ processes = []
 
 [env]
   PORT = "8080"
+  ATLAS_URI="mongodb+srv://cconAlex:rocketfish1970@cluster0.56bgb1d.mongodb.net//test?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true"
+
 
 [experimental]
   allowed_public_ports = []
