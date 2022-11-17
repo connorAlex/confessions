@@ -33,7 +33,7 @@ const Home = () => {
     };
 
     if (approved) {
-      await fetch("https://confessions-weld.vercel.app/", {
+      await fetch("https://confessions.fly.dev/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

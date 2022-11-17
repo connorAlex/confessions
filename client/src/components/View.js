@@ -11,7 +11,7 @@ const View = React.memo(() => {
   let { state } = useLocation();
 
   useEffect(() => {
-    if (!state.approved) {
+    if (!state) {
       navigate("/");
     }
     console.log(state);
@@ -24,7 +24,7 @@ const View = React.memo(() => {
   }, []);
 
   let getConfession = async () => {
-    let response = await fetch("confessions-weld.vercel.app/view");
+    let response = await fetch("https://confessions.fly.dev/view");
 
     if (!response.ok) {
       const message = `Error: ${response.statusText}`;
